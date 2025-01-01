@@ -8,13 +8,9 @@ import yt_dlp
 import sys
 import os
 from video import Video
-# from openpyxl import Workbook
 
-# wb = Workbook()
-# sheet = wb.active
-
-cid = '' #CLIENT ID
-secret = '' #CLIENT SECRET
+cid = '8be52689c00b42cea33528a699e76fc0' #CLIENT ID
+secret = '64eefae3c7ff4b2f8598e98491d02256' #CLIENT SECRET
 
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 
@@ -86,7 +82,7 @@ def download_playlist(url, dir):
   for audio in playlist:
     artist = audio['artist']
     track = audio['track_name']
-    filename = f"{artist} - {track}.mp3"
+    filename = f"{track}.mp3"
     print(f"Downloading {filename}")
     try:
       download_audio(search(create_query(audio)), f"{dir}/{filename}")
